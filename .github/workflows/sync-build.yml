@@ -1,0 +1,87 @@
+name: Sync and Build Mihomo Rules
+
+on:
+  schedule:
+    - cron: "0 19 */14 * *"
+
+  workflow_dispatch:
+
+  push:
+    branches:
+      - release
+
+permissions:
+  contents: write
+
+jobs:
+  sync-build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: release
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
+      - name: Add upstream
+        run: |
+          git remote remove upstream || true
+          git remote add upstream https://github.com/666OS/rules.git
+
+      - name: Fetch upstream
+        run: |
+          git fetch upstream release
+
+      - name: Sync txt only
+        run: |
+          TXT_FILES=$(git ls-tree -r --name-only upstream/release | grep '^mihomo/.*\.txt$' || true)
+
+          if [ -n "$TXT_FILES" ]; then
+            git checkout upstream/release -- $TXT_FILES
+          fi
+
+      - name: Download Mihomo
+        run: |
+          mkdir -p tools
+
+          VERSION=v1.19.26
+
+          curl -L \
+            -o tools/mihomo.gz \
+            https://github.com/MetaCubeX/mihomo/releases/download/${VERSION}/mihomo-linux-amd64-${VERSION}.gz
+
+          gzip -d tools/mihomo.gz
+
+          chmod +x tools/mihomo
+
+      - name: Build domain mrs
+        run: |
+          find mihomo/domain -name "*.txt" | while read f
+          do
+            tools/mihomo convert-ruleset domain text "$f" "${f%.txt}.mrs"
+          done
+
+      - name: Build ip mrs
+        run: |
+          find mihomo/ip -name "*.txt" | while read f
+          do
+            tools/mihomo convert-ruleset ipcidr text "$f" "${f%.txt}.mrs"
+          done
+
+      - name: Commit
+        run: |
+          git add mihomo
+
+          git diff --cached --quiet || \
+          git commit -m "auto update rules"
+
+      - name: Push
+        run: |
+          git push origin release
