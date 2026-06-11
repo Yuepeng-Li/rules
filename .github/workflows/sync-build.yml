@@ -40,27 +40,35 @@ jobs:
           git fetch upstream release
 
       - name: Sync txt only
+        shell: bash
         run: |
+          set -uo pipefail
+
           TXT_FILES=$(git ls-tree -r --name-only upstream/release | grep '^mihomo/.*\.txt$' || true)
 
-          if [ -n "$TXT_FILES" ]; then
-            BASE=$(git merge-base HEAD upstream/release)
-            for f in $TXT_FILES; do
-              mkdir -p "$(dirname "$f")"
-              git show upstream/release:"$f" > /tmp/upstream_file
-              if git ls-tree "$BASE" "$f" | grep -q "$f"; then
-                git show "$BASE":"$f" > /tmp/base_file
-              else
-                # 新文件：base 为空
-                > /tmp/base_file
-              fi
-              if [ -f "$f" ]; then
-                git merge-file "$f" /tmp/base_file /tmp/upstream_file || true
-              else
-                cp /tmp/upstream_file "$f"
-              fi
-            done
+          if [ -z "$TXT_FILES" ]; then
+            echo "No txt files found in upstream/release, skipping."
+            exit 0
           fi
+
+          BASE=$(git merge-base HEAD upstream/release)
+
+          while IFS= read -r f; do
+            mkdir -p "$(dirname "$f")"
+            git show "upstream/release:$f" > /tmp/upstream_file
+
+            if git ls-tree "$BASE" "$f" 2>/dev/null | grep -q "$f"; then
+              git show "$BASE:$f" > /tmp/base_file
+            else
+              > /tmp/base_file
+            fi
+
+            if [ -f "$f" ]; then
+              git merge-file "$f" /tmp/base_file /tmp/upstream_file || true
+            else
+              cp /tmp/upstream_file "$f"
+            fi
+          done <<< "$TXT_FILES"
 
       - name: Apply comment rules
         run: |
