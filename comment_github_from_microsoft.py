@@ -2,8 +2,8 @@
 将 GitHub.txt 中的非注释条目在 Microsoft.txt 中找到并注释掉。
 """
 
-GITHUB_FILE = r"mihomo\domain\GitHub.txt"
-MICROSOFT_FILE = r"mihomo\domain\Microsoft.txt"
+GITHUB_FILE = "mihomo/domain/GitHub.txt"
+MICROSOFT_FILE = "mihomo/domain/Microsoft.txt"
 
 
 def load_active_entries(filepath):
