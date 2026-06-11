@@ -42,10 +42,9 @@ jobs:
       - name: Sync txt only
         shell: bash
         run: |
-          set -uo pipefail
+          set +e
 
-          TXT_FILES=$(git ls-tree -r --name-only upstream/release | grep '^mihomo/.*\.txt$' || true)
-
+          TXT_FILES=$(git ls-tree -r --name-only upstream/release | grep '^mihomo/.*\.txt$')
           if [ -z "$TXT_FILES" ]; then
             echo "No txt files found in upstream/release, skipping."
             exit 0
@@ -57,14 +56,15 @@ jobs:
             mkdir -p "$(dirname "$f")"
             git show "upstream/release:$f" > /tmp/upstream_file
 
-            if git ls-tree "$BASE" "$f" 2>/dev/null | grep -q "$f"; then
+            git ls-tree "$BASE" "$f" 2>/dev/null | grep -q "$f"
+            if [ $? -eq 0 ]; then
               git show "$BASE:$f" > /tmp/base_file
             else
               > /tmp/base_file
             fi
 
             if [ -f "$f" ]; then
-              git merge-file "$f" /tmp/base_file /tmp/upstream_file || true
+              git merge-file "$f" /tmp/base_file /tmp/upstream_file
             else
               cp /tmp/upstream_file "$f"
             fi
