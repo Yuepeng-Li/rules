@@ -44,8 +44,27 @@ jobs:
           TXT_FILES=$(git ls-tree -r --name-only upstream/release | grep '^mihomo/.*\.txt$' || true)
 
           if [ -n "$TXT_FILES" ]; then
-            git checkout upstream/release -- $TXT_FILES
+            BASE=$(git merge-base HEAD upstream/release)
+            for f in $TXT_FILES; do
+              mkdir -p "$(dirname "$f")"
+              git show upstream/release:"$f" > /tmp/upstream_file
+              if git ls-tree "$BASE" "$f" | grep -q "$f"; then
+                git show "$BASE":"$f" > /tmp/base_file
+              else
+                # 新文件：base 为空
+                > /tmp/base_file
+              fi
+              if [ -f "$f" ]; then
+                git merge-file "$f" /tmp/base_file /tmp/upstream_file || true
+              else
+                cp /tmp/upstream_file "$f"
+              fi
+            done
           fi
+
+      - name: Apply comment rules
+        run: |
+          python comment_github_from_microsoft.py
 
       - name: Download Mihomo
         run: |
