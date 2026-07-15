@@ -42,34 +42,67 @@ jobs:
       - name: Sync txt only
         shell: bash
         run: |
-          set +e
+            set +e
 
-          TXT_FILES=$(git ls-tree -r --name-only upstream/release | grep '^mihomo/.*\.txt$')
-          if [ -z "$TXT_FILES" ]; then
-            echo "No txt files found in upstream/release, skipping."
+            TXT_FILES=$(git ls-tree -r --name-only upstream/release |
+              grep '^mihomo/.*\.txt$')
+
+            if [ -z "$TXT_FILES" ]; then
+              echo "No txt files found in upstream/release, skipping."
+              exit 0
+            fi
+
+            BASE=$(git merge-base HEAD upstream/release)
+
+            HAS_CONFLICTS=0
+            HAS_ERRORS=0
+
+            while IFS= read -r f; do
+              echo "Merging: $f"
+
+              mkdir -p "$(dirname "$f")"
+
+              if ! git show "upstream/release:$f" > /tmp/upstream_file; then
+                echo "::error::Failed to read upstream file: $f"
+                HAS_ERRORS=1
+                continue
+              fi
+
+              if git cat-file -e "$BASE:$f" 2>/dev/null; then
+                git show "$BASE:$f" > /tmp/base_file
+              else
+                > /tmp/base_file
+              fi
+
+              if [ -f "$f" ]; then
+                git merge-file "$f" /tmp/base_file /tmp/upstream_file
+                MERGE_STATUS=$?
+
+                if [ "$MERGE_STATUS" -eq 0 ]; then
+                  echo "Merged cleanly: $f"
+                elif [ "$MERGE_STATUS" -le 127 ]; then
+                  echo "::warning::Merge conflict in $f"
+                  HAS_CONFLICTS=1
+                else
+                  echo "::error::git merge-file failed for $f, status=$MERGE_STATUS"
+                  HAS_ERRORS=1
+                fi
+              else
+                cp /tmp/upstream_file "$f"
+                echo "Added upstream file: $f"
+              fi
+            done <<< "$TXT_FILES"
+
+            if [ "$HAS_CONFLICTS" -eq 1 ]; then
+              echo "::warning::Some files contain merge conflict markers."
+            fi
+
+            if [ "$HAS_ERRORS" -eq 1 ]; then
+              echo "::error::One or more files could not be processed."
+              exit 1
+            fi
+
             exit 0
-          fi
-
-          BASE=$(git merge-base HEAD upstream/release)
-
-          while IFS= read -r f; do
-            mkdir -p "$(dirname "$f")"
-            git show "upstream/release:$f" > /tmp/upstream_file
-
-            git ls-tree "$BASE" "$f" 2>/dev/null | grep -q "$f"
-            if [ $? -eq 0 ]; then
-              git show "$BASE:$f" > /tmp/base_file
-            else
-              > /tmp/base_file
-            fi
-
-            if [ -f "$f" ]; then
-              git merge-file "$f" /tmp/base_file /tmp/upstream_file
-            else
-              cp /tmp/upstream_file "$f"
-            fi
-          done <<< "$TXT_FILES"
-
       - name: Apply comment rules
         run: |
           python comment_github_from_microsoft.py
