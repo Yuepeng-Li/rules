@@ -1,7 +1,7 @@
 # NAME: Apple
 # AUTHOR: YYDS666
-# UPDATED: 2026-06-10 03:55:53
-# TOTAL: 1212
+# UPDATED: 2026-07-14 03:10:08
+# TOTAL: 1217
 DOMAIN-SUFFIX,100beatscheap.com
 DOMAIN-SUFFIX,12diasdepresentesdeitunes.com
 DOMAIN-SUFFIX,12joursdecadeauxdeitunes.com
@@ -86,6 +86,7 @@ DOMAIN-SUFFIX,apple-pay.wang
 DOMAIN-SUFFIX,apple-store.cn
 DOMAIN-SUFFIX,apple-store.net
 DOMAIN-SUFFIX,apple-store.wang
+DOMAIN-SUFFIX,apple-studies.com
 DOMAIN-SUFFIX,apple-usa.net
 DOMAIN-SUFFIX,apple-watch.com.ru
 DOMAIN-SUFFIX,appleaccount.net
@@ -163,6 +164,7 @@ DOMAIN-SUFFIX,applepremiumresellers.com.au
 DOMAIN-SUFFIX,applereach.com
 DOMAIN-SUFFIX,applereach.net
 DOMAIN-SUFFIX,apples-msk.ru
+DOMAIN-SUFFIX,appleschoolcontent.com
 DOMAIN-SUFFIX,applescreensavers.com
 DOMAIN-SUFFIX,applescript.info
 DOMAIN-SUFFIX,appleshare.info
@@ -199,6 +201,7 @@ DOMAIN-SUFFIX,appstoreapple.cn
 DOMAIN-SUFFIX,appule.com
 DOMAIN-SUFFIX,appye.com
 DOMAIN-SUFFIX,apyle.com
+DOMAIN-SUFFIX,apzones.com
 DOMAIN-SUFFIX,asto.re
 DOMAIN-SUFFIX,aucheapbeats.com
 DOMAIN-SUFFIX,audiobeatsau.com
@@ -208,6 +211,7 @@ DOMAIN-SUFFIX,auricularemonsterbeats.com
 DOMAIN-SUFFIX,auricularesbeatsbaratosshop.com
 DOMAIN-SUFFIX,auricularesbeatsmarkt.com
 DOMAIN-SUFFIX,ausbeatsbydrdre.com
+DOMAIN-SUFFIX,axm-usercontent-apple.com
 DOMAIN-SUFFIX,bag-glasses1.com
 DOMAIN-SUFFIX,bandgirlz.com
 DOMAIN-SUFFIX,baxsound.com
@@ -768,6 +772,7 @@ DOMAIN-SUFFIX,ibooksauthor.com
 DOMAIN-SUFFIX,ichat.co.in
 DOMAIN-SUFFIX,icloud-apple.cn
 DOMAIN-SUFFIX,icloud-content.com
+DOMAIN-SUFFIX,icloud-content.com.cn
 DOMAIN-SUFFIX,icloud-isupport.com
 DOMAIN-SUFFIX,icloud-sandbox.com
 DOMAIN-SUFFIX,icloudads.net

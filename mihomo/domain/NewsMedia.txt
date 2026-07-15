@@ -1,7 +1,7 @@
 # NAME: NewsMedia
 # AUTHOR: YYDS666
-# UPDATED: 2026-06-10 03:55:55
-# TOTAL: 1575
+# UPDATED: 2026-07-14 03:10:07
+# TOTAL: 1581
 +.1917live.red
 +.1degree.com.au
 +.1prime.ru
@@ -723,6 +723,7 @@
 +.india.com
 +.indiancolleges.com
 +.infoglobo.com.br
++.infoq.com
 +.infotimes.com.tw
 +.infowars.com
 +.infowarsmedia.com
@@ -944,6 +945,10 @@
 +.nfsc.global
 +.nfscdict.com
 +.nfscofficial.com
++.nhk
++.nhk.jp
++.nhk.or.jp
++.nhkworld.jp
 +.nikkan-gendai.com
 +.nikkansports.com
 +.nikkei-cnbc.co.jp
@@ -1302,6 +1307,7 @@
 +.techatbloomberg.com
 +.technews.tw
 +.techradar.com
++.techspot.com
 +.techtudo.com
 +.techtudo.com.br
 +.teenchoice.com

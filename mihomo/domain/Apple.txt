@@ -1,7 +1,7 @@
 # NAME: Apple
 # AUTHOR: YYDS666
-# UPDATED: 2026-06-10 03:55:53
-# TOTAL: 1808
+# UPDATED: 2026-07-14 03:10:08
+# TOTAL: 1813
 +.100beatscheap.com
 +.12diasdepresentesdeitunes.com
 +.12diasderegalosdeitunes.cl
@@ -105,6 +105,7 @@
 +.apple-store.cn
 +.apple-store.net
 +.apple-store.wang
++.apple-studies.com
 +.apple-usa.net
 +.apple-watch.com.ru
 +.apple.ae
@@ -333,6 +334,7 @@
 +.applereach.com
 +.applereach.net
 +.apples-msk.ru
++.appleschoolcontent.com
 +.applescreensavers.com
 +.applescript.info
 +.appleshare.info
@@ -414,6 +416,7 @@
 +.appule.com
 +.appye.com
 +.apyle.com
++.apzones.com
 +.asto.re
 +.aucheapbeats.com
 +.audiobeatsau.com
@@ -423,6 +426,7 @@
 +.auricularesbeatsbaratosshop.com
 +.auricularesbeatsmarkt.com
 +.ausbeatsbydrdre.com
++.axm-usercontent-apple.com
 +.bag-glasses1.com
 +.bandgirlz.com
 +.baxsound.com
@@ -997,6 +1001,7 @@
 +.ichat.co.in
 +.icloud-apple.cn
 +.icloud-content.com
++.icloud-content.com.cn
 +.icloud-isupport.com
 +.icloud-sandbox.com
 +.icloud.ch
@@ -1564,6 +1569,7 @@ amp-api-updates.apps.apple.com
 amp-api.apps.apple.com
 amp-api.media.apple.com
 amp-api.music.apple.com
+amp-api.podcasts.apple.com
 aod-ssl.itunes.apple.com
 aod.itunes.apple.com
 api-edge.apps.apple.com
@@ -1581,7 +1587,6 @@ appleworldwidedeveloper.sc.omtrdc.net
 apps.apple.com
 apps.mzstatic.com
 apptrailers.itunes.apple.com
-auth.music.apple.com
 bag-cdn.itunes-apple.com.akadns.net
 bag.itunes.apple.com
 beatselectronicsllc.tt.omtrdc.net
@@ -1608,6 +1613,7 @@ cl1.apple.com
 cl2-cdn.origin-apple.com.akadns.net
 cl2-cn.apple.com
 cl2.apple.com
+cl2.apple.com.edgekey.net.globalredir.akadns.net
 cl3-cdn.origin-apple.com.akadns.net
 cl3.apple.com
 cl4-cdn.origin-apple.com.akadns.net
@@ -1637,12 +1643,15 @@ devstreaming-cdn.apple.com
 discussionschinese.apple.com
 download.developer.apple.com
 downloaddispatch.itunes.apple.com
+entitlements-edge.itunes.apple.com
 experiments.apple.com
 fides-pol.apple.com
 fitness-content.apple.com
+fpinit.itunes.apple.com
 gs-loc-cn.apple.com
 gs-loc.apple.com
 gsp10-ssl-cn.ls.apple.com
+gsp11-cn.ls.apple.com
 gsp12-cn.ls.apple.com
 gsp13-cn.ls.apple.com
 gsp4-cn.ls.apple.com
@@ -1666,13 +1675,10 @@ guzzoni.apple.com
 guzzoni.smoot.apple.com
 hls-amt.itunes.apple.com
 hls.itunes.apple.com
-icloud-cdn.icloud.com.akadns.net
-icloud.cdn-apple.com
 images.apple.com.edgekey.net.globalredir.akadns.net
 inappcheck-cn.itunes-apple.com.akadns.net
 inappcheck-lb.itunes-apple.com.akadns.net
 inappcheck.itunes.apple.com
-ingest.apple-studies.com
 init-kt.apple.com
 init-p01md-lb.push-apple.com.akadns.net
 init-p01md.apple.com
@@ -1707,6 +1713,7 @@ itunesconnect.apple.com
 js-cdn.music.apple.com
 km.support.apple.com
 maps.apple.com
+mensura.cdn-apple.com
 mesu-cdn.apple.com.akadns.net
 mesu-china.apple.com.akadns.net
 mesu.apple.com
@@ -1723,9 +1730,7 @@ news-events.apple.com
 notary-submissions-prod.s3-accelerate.amazonaws.com
 notary-submissions-prod.s3.us-west-2.amazonaws.com
 np-edge.itunes.apple.com
-ocsp-lb.apple.com.akadns.net
 ocsp.apple.com
-ocsp2-lb.apple.com.akadns.net
 ocsp2.apple.com
 oscdn.apple.com
 oscdn.origin-apple.com.akadns.net
@@ -1733,18 +1738,18 @@ osxapps.itunes.apple.com
 osxapps.itunes.g.aaplimg.com
 p-events-delivery.akamaized.net
 pancake.apple.com
-pancake.cdn-apple.com.akadns.net
 pba0.apple.com
 pd-nk.itunes.apple.com
 pd.itunes.apple.com
 play-edge.itunes.apple.com
 play.itunes.apple.com
 play.music.apple.com
+podcasts.apple.com
+podcasts.itunes.apple.com
 probe.siri.apple.com
 prod-support.apple-support.akadns.net
 publicassets.cdn-apple.com
 push-apple.com.akadns.net
-reserve-prime.apple.com
 s.mzstatic.com
 s1.mzstatic.com
 s2.mzstatic.com
