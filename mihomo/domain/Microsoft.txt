@@ -1,7 +1,7 @@
 # NAME: Microsoft
 # AUTHOR: YYDS666
-# UPDATED: 2026-07-14 03:08:02
-# TOTAL: 749
+# UPDATED: 2026-08-06 03:10:19
+# TOTAL: 752
 +.1drv.com
 +.1drv.ms
 +.21vbc.com
@@ -101,6 +101,7 @@
 +.azuredns-prd.org
 +.azureedge-test.net
 +.azureedge.net
++.azureedge.us
 +.azurefd.net
 +.azurehdinsight.cn
 +.azureiotcentral.com
@@ -167,6 +168,7 @@
 +.cn.mm.bing.net
 +.codethemicrobit.com
 # +.collector.github.com
++.copilot-stg.com
 +.copilot.com
 +.cortanaanalytics.com
 +.cortanaskills.com
@@ -228,6 +230,7 @@
 # +.githubnext.com
 # +.githubpreview.dev
 # +.githubstatus.com
+# +.githubsupport.com
 # +.githubuniverse.com
 # +.githubusercontent.com
 +.gotcosmos.com

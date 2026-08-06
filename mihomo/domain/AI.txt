@@ -1,7 +1,7 @@
 # NAME: AI
 # AUTHOR: YYDS666
-# UPDATED: 2026-07-14 03:10:13
-# TOTAL: 255
+# UPDATED: 2026-08-06 03:12:21
+# TOTAL: 262
 +.agentclientprotocol.com
 +.ai.com
 +.ai.studio
@@ -28,6 +28,7 @@
 +.chat.com
 +.chatgpt.com
 +.chatgpt.livekit.cloud
++.chatgpt.site
 +.chutes.ai
 +.cici.com
 +.ciciai.com
@@ -52,6 +53,7 @@
 +.comfy.org
 +.comfyci.org
 +.comfyregistry.org
++.copilot-stg.com
 +.copilot.cloud.microsoft
 +.copilot.com
 +.copilot.microsoft.com
@@ -79,6 +81,7 @@
 +.envatousercontent.com
 +.events.statsigapi.net
 +.featuregates.org
++.flow.google
 +.gateway.ai.cloudflare.com
 +.gateway.icloud.com
 +.geller-pa.googleapis.com
@@ -94,6 +97,7 @@
 +.grazie.ai
 +.grok.com
 +.grok.x.com
++.grokipedia.com
 +.groq.com
 +.h2o.ai
 +.heygen.com
@@ -191,6 +195,9 @@ ai.google.dev
 aistudio.google.com
 alkalicore-pa.clients6.google.com
 alkalimakersuite-pa.clients6.google.com
+anthropic-com.ghost.io
+anthropic.auth0.com
+anthropic.com.cdn.cloudflare.net
 antigravity-pa.googleapis.com
 antigravity-unleash.goog
 antigravity.google

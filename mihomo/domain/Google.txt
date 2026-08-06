@@ -1,7 +1,7 @@
 # NAME: Google
 # AUTHOR: YYDS666
-# UPDATED: 2026-07-14 03:08:01
-# TOTAL: 1069
+# UPDATED: 2026-08-06 03:12:22
+# TOTAL: 1068
 +.0emm.com
 +.1e100.net
 +.1ucrs.com
@@ -235,7 +235,6 @@
 +.golang.net
 +.golang.org
 +.gonglchuangl.net
-+.goo
 +.goo.gl
 +.goog
 +.googel.com

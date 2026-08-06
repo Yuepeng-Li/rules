@@ -1,7 +1,7 @@
 # NAME: Tracking
 # AUTHOR: YYDS666
-# UPDATED: 2026-07-14 03:10:09
-# TOTAL: 528
+# UPDATED: 2026-08-06 03:12:32
+# TOTAL: 527
 +.adjust.com
 +.ads.linkedin.com
 +.airpr.com
@@ -265,7 +265,6 @@ pubt.net
 qg.lorzl.gq
 retracker.ip.ncnet.ru
 retracker.lanta.me
-retracker.local
 retracker.spark-rostov.ru
 retracker01-msk-virt.corbina.net
 run.publictracker.xyz
